@@ -3,11 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather</title>
-    <script type="module" crossorigin src="/weather-app-2.0/assets/index-b1056fbd.js"></script>
-    <link rel="stylesheet" href="/weather-app-2.0/assets/index-6bd01da4.css">
+    <title>Today's Weather</title>
+    <script type="module" crossorigin src="/weather-app-2.0/assets/index-fbb6de06.js"></script>
+    <link rel="stylesheet" href="/weather-app-2.0/assets/index-290408ae.css">
   </head>
   <body class="blurred">
+    <div class="title">
+      <h1>Today's Weather</h1>
+    </div>
+    <img class="weather-bg" data-current-bg alt="weather-bg">
+    <div class="cover">
     <header class="header">
       <div class="header-left">
         <img class="weather-icon large" src="icons/sun.svg" data-current-icon alt="weather-icon">
@@ -256,8 +261,7 @@
             </div>
           </td>
         </tr>
-
-                <tr class="hour-row">
+        <tr class="hour-row">
           <td>
             <div class="info-group">
               <div class="label">Thursday</div>
@@ -442,7 +446,9 @@
           </div>
         </td>
       </tr>
-    </template>
+    </template> 
+    </div>
     
+
   </body>
 </html>
