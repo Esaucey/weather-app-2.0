@@ -1,6 +1,7 @@
 import "./style.css";
 import { getWeather } from "./weather";
 import { ICON_MAP } from "./iconMap";
+import { BG_MAP } from "./backgroundMap";
 
 navigator.geolocation.getCurrentPosition(positionSuccess, positionError)
 
@@ -15,7 +16,7 @@ function positionError() {
   alert("Cannot access your location")
 }
 
-function renderWeather({ current, daily, hourly} ) {
+function renderWeather({ current, daily, hourly }) {
   renderCurrentWeather(current);
   renderDailyWeather(daily);
   renderHourlyWeather(hourly);
@@ -30,9 +31,16 @@ function getIconUrl(iconCode) {
   return `icons/${ICON_MAP.get(iconCode)}.svg`
 }
 
-const currentIcon = document.querySelector("[data-current-icon")
+function getBgUrl(iconCode) {
+  return `backgrounds/${BG_MAP.get(iconCode)}.jpg`
+}
+
+const currentIcon = document.querySelector("[data-current-icon]")
+const currentBg = document.querySelector("[data-current-bg]")
 function renderCurrentWeather(current) {
   currentIcon.src = getIconUrl(current.iconCode)
+  currentBg.src = getBgUrl(current.iconCode)
+  console.log(current.iconCode)
   setValue("current-temp", current.currentTemp)
   setValue("current-high", current.highTemp)
   setValue("current-low", current.lowTemp)
