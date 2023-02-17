@@ -40,7 +40,6 @@ function parseCurrentWeather({ current_weather, daily }) {
 }
 
 function parseDailyWeather({ daily }) {
-    console.log(daily)
     return daily.time.map((time, index) => {
         return {
             timestamp: time * 1000,

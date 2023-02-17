@@ -40,7 +40,6 @@ const currentBg = document.querySelector("[data-current-bg]")
 function renderCurrentWeather(current) {
   currentIcon.src = getIconUrl(current.iconCode)
   currentBg.src = getBgUrl(current.iconCode)
-  console.log(current.iconCode)
   setValue("current-temp", current.currentTemp)
   setValue("current-high", current.highTemp)
   setValue("current-low", current.lowTemp)
